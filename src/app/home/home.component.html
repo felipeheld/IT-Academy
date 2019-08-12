@@ -1,0 +1,17 @@
+<header>
+    <nav class="navbar">
+        <img src="assets/img/dell-logo.png">
+    </nav>
+</header>
+
+<body>
+    <mat-form-field style="margin-left: 200px">
+        <mat-select #selectForm placeholder="Org" [formControl]="orgs" multiple>
+            <mat-option *ngFor="let org of orgsList" [value]="org"> {{ org }} </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <p *ngFor="let value of selectForm.value">
+        {{ value }}
+    </p>
+    <app-user></app-user>
+</body>
