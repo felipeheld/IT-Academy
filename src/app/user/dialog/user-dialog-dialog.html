@@ -1,0 +1,13 @@
+<h1 mat-dialog-title> Hi fellow companion </h1>
+<div mat-dialog-content>
+<p> Pick your goddamn user </p>
+    <mat-form-field>
+        <mat-select placeholder="User" [formControl]="userSelectControl" multiple>
+            <mat-option *ngFor="let user of observableUserList | async" [value]="user"> {{ user.name }} </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSubmit()"> Save </button>
+    <button mat-button (click)="onCancel()"> Cancel </button>
+</div>
